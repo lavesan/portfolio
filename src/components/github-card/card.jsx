@@ -1,9 +1,9 @@
 import React from 'react';
 import './card.scss';
 
-export const Card = ({ name, clone_url, topics, description }) => {
+export const RepoCard = ({ name, clone_url, topics, description }) => {
     return (
-        <div className="card">
+        <a href={clone_url} target="_blank" className="card">
             <div className="upper-box">
                 <div className="image-box">
                     <img src="https://image.freepik.com/icones-gratis/github-logotipo_318-10832.jpg" width="50" alt="github" />
@@ -16,6 +16,6 @@ export const Card = ({ name, clone_url, topics, description }) => {
             <div className="tags-box">
                 <strong>{topics && topics.map(topic => `${topic} `)}</strong>
             </div>
-        </div>
+        </a>
       )
 }
