@@ -67,6 +67,12 @@ const App: React.FC = () => {
 
   return (
     <div className="single-page">
+      <header>
+        <select name="" id="">
+          <option value="en">English</option>
+          <option value="pt">Português</option>
+        </select>
+      </header>
       <div className="perfil-img-box">
         <img src={myImage} alt="Minha imagem" className="perfil-img" />
       </div>
