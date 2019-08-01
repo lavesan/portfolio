@@ -14,7 +14,8 @@ const App: React.FC = () => {
         'b',
         'c'
       ],
-      description: 'descrição teste'
+      description: 'descrição teste',
+      title:'Github'
     },
     {
       name: 'Teste 2',
@@ -26,7 +27,21 @@ const App: React.FC = () => {
         'react',
         'jquery'
       ],
-      description: 'descrição teste 2'
+      description: 'descrição teste 2',
+      title:'Github'
+    },
+    {
+      name: 'Teste 2',
+      clone_url: 'https://github.com',
+      topics: [
+        'tópico',
+        'node',
+        'javascript',
+        'react',
+        'jquery'
+      ],
+      description: 'descrição teste 2',
+      title:'Github'
     },
   ]);
 
@@ -55,7 +70,13 @@ const App: React.FC = () => {
       <div className="perfil-img-box">
         <img src={myImage} alt="Minha imagem" className="perfil-img" />
       </div>
-      <p>Valdery Alves Paes Júnior</p>
+      <p><strong>Valdery Alves Paes Júnior</strong></p>
+      <p>Hi! I'm a web developer that operates in all the ends of the application.
+        <br />If you have a proposal for me, contact me in one of the phones bellow
+      </p>
+      <p><span className="fas fa-map-marker-alt"></span>Jaboatão dos guararapes, PE, Brazil</p>
+      <p title="whatsapp"><span className="fab fa-whatsapp"></span>+55(81)98540-5144</p>
+      <p title="telegram"><span className="fab fa-telegram-plane"></span>+55(81)98540-5144</p>
       <h2>My projects</h2>
       <div className="repos-box">
         {repositoryData.map((repo, i) => <RepoCard key={i} {...repo} />)}
