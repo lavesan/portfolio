@@ -1,0 +1,37 @@
+.perfil-img-box {
+    width: 200px !important;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    .perfil-img {
+        width: 200px;
+    }
+}
+
+.describe {
+    color: #a3a3a3;
+}
+
+.port-success-button {
+    background-color: #35ad2a;
+    border: thin solid #35ad2a;
+    border-radius: 2px;
+    padding: 5px 15px;
+    color: #FFF;
+    cursor: pointer;
+    box-shadow: 2px 2px #316e2c;
+}
+
+.port-neutral-button {
+    background: none;
+    border: thin solid #a3a3a3;
+    border-radius: 2px;
+    padding: 5px 15px;
+    color: #a3a3a3;
+    cursor: pointer;
+}
+
+// #33d424
+// #35ad2a
+// #35912d
+// #316e2c

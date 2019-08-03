@@ -1,0 +1,33 @@
+.header-box {
+    .header-nav ul, li {
+        padding: 0;
+        list-style: none;
+    }
+    
+    .header-nav {
+        border-bottom: thin solid #cccccc;
+        height: 30px;
+        li {
+            float: left;
+            width: 20%;
+            a {
+                user-select: none;
+                text-decoration: none;
+                color: #35ad2a;
+                transition: 0.5s ease-in-out;
+                &:hover {
+                    color: #316e2c;
+                }
+            }
+        }
+    }
+    .gray-font {
+        color: #a3a3a3;
+        font-size: 0.7em;
+        margin: 20px 0;
+    }
+
+    .active, .active:hover {
+        color: #cccccc !important;
+    }
+}

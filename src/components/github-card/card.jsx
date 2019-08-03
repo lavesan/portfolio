@@ -14,7 +14,7 @@ export const RepoCard = ({ name, clone_url, topics, description, title }) => {
                 </div>
             </div>
             <div className="tags-box">
-                <strong>{topics && topics.map(topic => `${topic} `)}</strong>
+                <strong>{topics && topics.map(topic => `#${topic} `)}</strong>
             </div>
         </a>
       )
