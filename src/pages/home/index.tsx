@@ -12,7 +12,8 @@ export const HomePage = () => {
                 </div>
              </div>
             <div className="col-6">
-                <h3>Desenvolvedor Web full-stack</h3>
+                <h2>Desenvolvedor Web freelancer</h2>
+                <h3 className="subtitle">front-end / back-end</h3>
                 <p className="describe">
                     Sites únicos que convertem visitantes em clientes e ajudam o seu negócio a evoluir
                 </p>
