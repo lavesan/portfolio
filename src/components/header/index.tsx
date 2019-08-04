@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import { NavLink, BrowserRouter as Router } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderComponent = () => {
     return (

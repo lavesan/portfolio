@@ -3,7 +3,7 @@ import './card.scss';
 
 export const RepoCard = ({ name, clone_url, topics, description, title }) => {
     return (
-        <a href={clone_url} target="_blank" className="card" title={title}>
+        <a href={clone_url} target="_blank" rel="noopener noreferrer" className="card" title={title}>
             <div className="upper-box">
                 <div className="image-box">
                     <img src="https://image.freepik.com/icones-gratis/github-logotipo_318-10832.jpg" width="50" alt="github" />

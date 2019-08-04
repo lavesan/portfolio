@@ -1,8 +1,9 @@
 import React from 'react';
 import './index.scss'
-import myImage from '../../assets/perfil.jpg';
+import { StyledNeutralButton, StyledSuccessButton } from '../../components/buttons';
+import { Link } from 'react-router-dom';
 
-export const HomePage = () => {
+export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage }) => {
  return (
      <article className="mt-5">
          <div className="row justify-content-center align-items-center">
@@ -20,9 +21,13 @@ export const HomePage = () => {
             </div>
          </div>
          <nav className="row justify-content-center align-items-center mt-4">
-             <button className="port-success-button">Me conheça</button>
+             <Link to="/about">
+                <StyledSuccessButton>Me conheça</StyledSuccessButton>
+             </Link>
              <p className="ml-3 mr-3 mt-auto mb-auto">ou</p>
-             <button className="port-neutral-button">Me contacte</button>
+             <Link to="/contact">
+                <StyledNeutralButton>Me contacte</StyledNeutralButton>
+            </Link>
          </nav>
      </article>
  )   
