@@ -11,6 +11,7 @@ import { HomePage } from './pages/home';
 import { ProjectsPage } from './pages/projects';
 import { ProcessPage } from './pages/process';
 import { AboutPage } from './pages/about';
+import { ContactPage } from './pages/contact';
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
@@ -20,22 +21,49 @@ const StyledApp = styled.div`
   width: 60%;
   margin: 0 auto;
   min-width: 300px;
-  padding: 180px 0 40px 0;
+  padding: 225px 0 40px 0;
   font-family: ${({ theme }) => theme.fontFamily};
+  .green-title {
+    color: ${({ theme }) => theme.success.terciaryColor};
+  }
   .title {
-    color: ${({ theme }) => theme.neutral.primaryColor}
+    color: ${({ theme }) => theme.neutral.primaryColor};
+    text-decoration: none;
   }
   .subtitle {
-    color: ${({ theme }) => theme.neutral.secondaryColor}
+    color: ${({ theme }) => theme.neutral.secondaryColor};
+    text-decoration: none;
   }
   .text {
-    color: ${({ theme }) => theme.neutral.terciaryColor}
+    color: ${({ theme }) => theme.neutral.terciaryColor};
+    text-decoration: none;
+  }
+
+  .link-icon {
+    text-decoration: none;
+  }
+
+  .whatsapp-icon:hover {
+    color: ${({ theme }) => theme.whatsappColor};
+  }
+  .telegram-icon:hover {
+    color: ${({ theme }) => theme.telegramColor};
+  }
+  .github-icon:hover {
+    color: ${({ theme }) => theme.githubColor};
+  }
+  .linkedin-icon:hover {
+    color: ${({ theme }) => theme.linkedinColor};
   }
 `;
 
 const App: React.FC = () => {
   const theme = {
     fontFamily: 'Open Sans, sans-serif',
+    whatsappColor: '#00e676',
+    telegramColor: '#3a6d99',
+    githubColor: '#000',
+    linkedinColor: '#0077B5',
     success: {
       primaryColor: '#33d424',
       secondaryColor: '#35ad2a',
@@ -44,8 +72,8 @@ const App: React.FC = () => {
     },
     neutral: {
       primaryColor: '#424242',
-      secondaryColor: '#a3a3a3',
-      terciaryColor: '#8a8a8a',
+      secondaryColor: '#8a8a8a',
+      terciaryColor: '#a3a3a3',
       quaternaryColor: '#B9C6FA',
     }
   }
@@ -61,6 +89,7 @@ const App: React.FC = () => {
             <Route path="/projects" component={ProjectsPage} />
             <Route path="/process" component={ProcessPage} />
             <Route path="/about" component={AboutPage} />
+            <Route path="/contact" component={ContactPage} />
           </Switch>
           <FooterComponent />
         </Router>

@@ -1,4 +1,4 @@
-import { StyledNeutralButton, StyledSuccessButton } from './buttons';
+import { StyledNeutralButton, StyledSuccessButton } from './styles';
 
 export {
     StyledSuccessButton,

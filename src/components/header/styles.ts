@@ -1,4 +1,6 @@
-.header-box {
+import styled from 'styled-components';
+
+export const StyledHeader = styled.header`
     position: fixed;
     left: 0;
     right: 0;
@@ -18,7 +20,7 @@
         height: 30px;
         li {
             float: left;
-            width: 25%;
+            width: 20%;
             a {
                 user-select: none;
                 text-decoration: none;
@@ -37,4 +39,4 @@
     .active, .active:hover {
         color: #424242 !important;
     }
-}
+`;

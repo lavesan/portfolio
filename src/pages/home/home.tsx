@@ -1,16 +1,17 @@
 import React from 'react';
-import './index.scss'
 import { StyledNeutralButton, StyledSuccessButton } from '../../components/buttons';
 import { Link } from 'react-router-dom';
+import { StyledPage } from '../about';
+import { StyledProfileBox } from './styles';
 
 export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage }) => {
  return (
-     <article className="mt-5">
+     <StyledPage>
          <div className="row justify-content-center align-items-center">
              <div className="col-6 d-flex justify-content-end">
-                <div className="perfil-img-box">
-                <img src={myImage} alt="Minha imagem" className="perfil-img" />
-                </div>
+                <StyledProfileBox>
+                    <img src={myImage} alt="Minha imagem" className="perfil-img" />
+                </StyledProfileBox>
              </div>
             <div className="col-6">
                 <h2 className="title">Desenvolvedor Web freelancer</h2>
@@ -26,12 +27,12 @@ export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage
                 <StyledSuccessButton>Me conheça</StyledSuccessButton>
              </Link>
              <p className="ml-3 mr-3 mt-auto mb-auto">ou</p>
-             <a href="mailto:valdery.jur@gmail.com">
+             <Link to="/contact">
                 <StyledNeutralButton>
-                    <i className="far fa-envelope"></i> Me contacte
+                    Me contacte
                 </StyledNeutralButton>
-            </a>
+            </Link>
          </nav>
-     </article>
+     </StyledPage>
  )   
 }

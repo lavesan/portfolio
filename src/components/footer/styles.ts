@@ -1,4 +1,6 @@
-.footer-box {
+import styled from 'styled-components';
+
+export const StyledFooter = styled.footer`
     position: fixed;
     left: 0;
     right: 0;
@@ -19,11 +21,5 @@
             text-decoration: none;
             margin-right: 10px;
         }
-        .linkedin:hover {
-            color: #0077B5;
-        }
-        .github:hover {
-            color: #000;
-        }
     }
-}
+`;

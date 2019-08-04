@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledProjectsPage = styled.div`
-    margin: 50px auto 0 auto;
+    margin : 0 auto;
+    /* margin: 50px auto 0 auto; */
 `
 
 export const StyledGrayP = styled.p`

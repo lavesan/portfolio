@@ -1,20 +1,19 @@
 import React from 'react';
-import './index.scss';
 import { NavLink } from 'react-router-dom';
+import { StyledHeader } from './styles';
 
 export const HeaderComponent = () => {
     return (
-        <header className="header-box">
+        <StyledHeader>
             <h1 className="text-center title">Valdery Alves</h1>
             <div className="gray-font d-flex flex-row justify-content-center">
                 <p className="mr-4">
-                    {/* <span className="fas fa-phone mr-1" title="Telefone"></span> */}
-                    <a href="https://t.me/valdery" className="fab fa-telegram-plane mr-1" target="_blank" rel="noopener noreferrer" title="Telegram"></a>
-                    <a href="https://wa.me/5581985405144" className="fab fa-whatsapp" target="_blank" rel="noopener noreferrer" title="Whatsapp"></a> +55(81)98540-5144
+                    <span className="fab fa-telegram-plane mr-1" title="Telegram"></span>
+                    <span className="fab fa-whatsapp" title="Whatsapp"></span> +55(81)98540-5144
                 </p>
-                <a href="mailto:valdery.jur@gmail.com">
-                    <i className="far fa-envelope"></i> valdery.jur@gmail.com
-                </a>
+                <span>
+                    <span className="far fa-envelope"></span> valdery.jur@gmail.com
+                </span>
             </div>
             <nav className="header-nav">
                 <ul className="text-center h-100">
@@ -30,8 +29,11 @@ export const HeaderComponent = () => {
                     <li>
                         <NavLink to="/about">Sobre mim</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/contact">Contato</NavLink>
+                    </li>
                 </ul>   
             </nav>
-        </header>
+        </StyledHeader>
     )
 }
