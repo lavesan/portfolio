@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import myImage from './assets/imgs/perfil.jpg';
+import myImage from './assets/imgs/perfil4.jpeg';
 import { ThemeProvider } from 'styled-components';
 
 import { HeaderComponent } from './components/header';
