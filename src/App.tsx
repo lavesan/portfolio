@@ -11,7 +11,7 @@ import { ProjectsPage } from './pages/projects';
 import { ProcessPage } from './pages/process';
 import { AboutPage } from './pages/about';
 import { ContactPage } from './pages/contact';
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledApp = styled.div`
@@ -97,7 +97,7 @@ const App: React.FC = () => {
         <Router>
           <HeaderComponent />
           <Switch>
-            <Route exact path="/" redirectTo="/home" />
+            <Route exact path="/" render={() => <Redirect to='/home' />} />
             <Route path="/home" render={() => <HomePage myImage={myImage} /> } />
             <Route path="/projects" component={ProjectsPage} />
             <Route path="/process" component={ProcessPage} />
