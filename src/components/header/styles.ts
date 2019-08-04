@@ -38,6 +38,9 @@ export const StyledHeader = styled.header`
                 &:hover {
                     color: #316e2c;
                 }
+                > :first-child {
+                    display: none;
+                }
             }
         }
     }
@@ -51,9 +54,16 @@ export const StyledHeader = styled.header`
     }
     
     @media(max-width: 1000px) {
-        width: 100%;
-        .header-nav {
-            min-width: 765px;
+        width: 100%
+    }
+    @media(max-width: 630px) {
+        .header-nav ul li a {
+            > :first-child {
+                display: block;
+            }
+            > :last-child {
+                display: none;
+            }
         }
     }
 `;

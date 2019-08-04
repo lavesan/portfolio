@@ -18,19 +18,34 @@ export const HeaderComponent = () => {
             <nav className="header-nav">
                 <ul className="text-center h-100">
                     <li>
-                        <NavLink to="/home">Home</NavLink>
+                        <NavLink to="/home">
+                            <span className="fas fa-home"></span>
+                            <span>Home</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/projects">Projetos</NavLink>
+                        <NavLink to="/projects">
+                            <span className="fas fa-folder"></span>
+                            <span>Projetos</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/process">Processo</NavLink>
+                        <NavLink to="/process">
+                            <span className="fas fa-project-diagram"></span>
+                            <span>Processo</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/about">Sobre mim</NavLink>
+                        <NavLink to="/about">
+                            <span className="fas fa-user"></span>
+                            <span>Sobre mim</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact">Contato</NavLink>
+                        <NavLink to="/contact">
+                            <span className="fas fa-phone"></span>
+                            <span>Contato</span>
+                        </NavLink>
                     </li>
                 </ul>   
             </nav>
