@@ -23,7 +23,7 @@ export const StyledFooter = styled.footer`
         }
     }
 
-    @media(max-width: 765px) {
+    @media(max-width: 1000px) {
         width: 100%;
         font-size: 0.9rem;
         padding-left: 10px;

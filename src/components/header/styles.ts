@@ -50,7 +50,7 @@ export const StyledHeader = styled.header`
         color: #424242 !important;
     }
     
-    @media(max-width: 765px) {
+    @media(max-width: 1000px) {
         width: 100%;
         .header-nav {
             min-width: 765px;
