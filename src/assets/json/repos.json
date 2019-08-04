@@ -50,7 +50,7 @@
             "formik",
             "styled-components"
         ],
-        "description": "Desafio de front-end que utilizei para ser aceito na plataforma Bossabox",
+        "description": "Desafio de front-end que utilizei para ser aceito na plataforma de freelancers Bossabox",
         "title": "Github"
     },
     {
@@ -65,7 +65,7 @@
             "class-validator",
             "postgresql"
         ],
-        "description": "Desafio de back-end que utilizei para ser aceito na plataforma Bossabox",
+        "description": "Desafio de back-end que utilizei para ser aceito na plataforma de freelancers Bossabox",
         "title": "Github"
     }
 ]
