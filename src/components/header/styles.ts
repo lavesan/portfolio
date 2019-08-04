@@ -19,11 +19,12 @@ export const StyledHeader = styled.header`
     .header-nav {
         border-bottom: thin solid #cccccc;
         height: 30px;
-        white-space: nowrap; /* [1] */
-        overflow-x: auto; /* [2] */
-        -webkit-overflow-scrolling: touch; /* [3] */
-        -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
-        /* [5] */
+        ul {
+            white-space: nowrap;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
         &::-webkit-scrollbar {
             display: none; 
         }
