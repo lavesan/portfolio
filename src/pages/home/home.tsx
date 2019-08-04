@@ -8,12 +8,12 @@ export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage
  return (
      <StyledPage>
          <div className="row justify-content-center align-items-center">
-             <div className="col-6 d-flex justify-content-end">
+             <div className="col-md-6 col-sm-12 d-flex justify-content-md-end justify-content-sm-center">
                 <StyledProfileBox>
                     <img src={myImage} alt="Minha imagem" className="perfil-img" />
                 </StyledProfileBox>
              </div>
-            <div className="col-6">
+            <div className="col-md-6 col-sm-12">
                 <h2 className="title">Desenvolvedor Web freelancer</h2>
                 <h3 className="subtitle">front-end / back-end</h3>
                 <p className="text">
@@ -22,7 +22,7 @@ export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage
                 </p>
             </div>
          </div>
-         <nav className="row justify-content-center align-items-center mt-4">
+         <nav className="d-flex justify-content-center align-items-center mt-4">
              <Link to="/about">
                 <StyledSuccessButton>Me conheça</StyledSuccessButton>
              </Link>

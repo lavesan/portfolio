@@ -4,8 +4,8 @@ import { StyledFooter } from './styles';
 export const FooterComponent = () => {
     return (
         <StyledFooter>
-            <div>
-                <p className="title">
+            <div className="d-flex align-items-center">
+                <p className="title mb-0">
                     <span className="fas fa-map-marker-alt"></span> Jaboatão dos guararapes, PE, Brasil
                 </p>
             </div>

@@ -1,24 +1,9 @@
 import React from 'react';
 import { StyledNeutralButton} from '../../components/buttons';
 import { StyledPage } from '../about';
-import styled from 'styled-components';
+import { StyledPhoneBox, StyledSocialBox, StyledSocialLink } from './styles';
 
-const StyledSocialBox = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column nowrap;
-`;
-
-const StyledPhoneBox = styled.div`
-    text-align: center;
-`;
-
-const StyledSocialLink = styled.a`
-    font-size: 70px;
-`;
-
-export const ContactPage = (theme: any) => {
+export const ContactPage = () => {
     return (
         <StyledPage>
             <h2 className="title">Vamos conversar</h2>

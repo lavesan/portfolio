@@ -13,11 +13,20 @@ export const StyledHeader = styled.header`
     .header-nav ul, li {
         padding: 0;
         list-style: none;
+        white-space: nowrap;
     }
     
     .header-nav {
         border-bottom: thin solid #cccccc;
         height: 30px;
+        white-space: nowrap; /* [1] */
+        overflow-x: auto; /* [2] */
+        -webkit-overflow-scrolling: touch; /* [3] */
+        -ms-overflow-style: -ms-autohiding-scrollbar; /* [4] */
+        /* [5] */
+        &::-webkit-scrollbar {
+            display: none; 
+        }
         li {
             float: left;
             width: 20%;
@@ -38,5 +47,12 @@ export const StyledHeader = styled.header`
 
     .active, .active:hover {
         color: #424242 !important;
+    }
+    
+    @media(max-width: 765px) {
+        width: 100%;
+        .header-nav {
+            min-width: 765px;
+        }
     }
 `;
