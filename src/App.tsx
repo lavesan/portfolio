@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header';
 
 import { HomePage } from './pages/home';
 import { ProjectsPage } from './pages/projects';
-import { ProcessPage } from './pages/proccess';
+import { ProcessPage } from './pages/process';
 import { AboutPage } from './pages/about';
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";

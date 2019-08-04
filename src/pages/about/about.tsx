@@ -11,7 +11,8 @@ export const AboutPage = () => {
             <ul>
                 <li>Ótimos websites em todos os tamanhos de tela;</li>
                 <li>Código bem escrito e documentado, fácil de manter;</li>
-                <li>Frameworks, linguagens e bibliotecas com bom suporte.</li>
+                <li>Frameworks, linguagens e bibliotecas com bom suporte;</li>
+                <li>Acessibilidade.</li>
             </ul>
         </div>
     )
