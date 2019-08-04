@@ -10,8 +10,8 @@ export const FooterComponent = () => {
                 </p>
             </div>
             <div className="social-media-box">
-                <a href="https://github.com/lavesan" target="_blank" className="fab fa-github title github-icon link-icon" title="Github"></a>
-                <a href="https://www.linkedin.com/in/valdery-alves-a32653160" target="_blank" className="fab fa-linkedin title linkedin-icon link-icon" title="Linkedin"></a>
+                <a href="https://github.com/lavesan" target="_blank" rel="noopener noreferrer" className="fab fa-github title github-icon link-icon" title="Github"></a>
+                <a href="https://www.linkedin.com/in/valdery-alves-a32653160" target="_blank" rel="noopener noreferrer" className="fab fa-linkedin title linkedin-icon link-icon" title="Linkedin"></a>
             </div>
         </StyledFooter>
     )

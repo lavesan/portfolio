@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyledPage } from '../about';
-import { StyledProcessBox } from './styles';
 
 export const ProcessPage = () => {
     return (

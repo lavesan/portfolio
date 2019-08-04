@@ -26,5 +26,6 @@ export const StyledFooter = styled.footer`
     @media(max-width: 765px) {
         width: 100%;
         font-size: 0.9rem;
+        padding-left: 10px;
     }
 `;
