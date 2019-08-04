@@ -4,7 +4,7 @@ const StyledButton = styled.button`
     border-radius: 2px;
     padding: 5px 15px;
     cursor: pointer;
-    &:active {
+    &:active, &:focus {
         outline:none;
     }
 `

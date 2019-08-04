@@ -4,11 +4,7 @@
 }
 
 :root {
-  /* overflow: -moz-scrollbars-none;
-  -ms-overflow-style: none;
-  scrollbar-width: none; /* Firefox 64 */
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
+  overflow-y: scroll;
 }
 
 body {

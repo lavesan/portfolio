@@ -1,18 +1,24 @@
 import React from 'react';
+import './about.scss';
 
 export const AboutPage = () => {
     return (
-        <div>
-            <p>
+        <div className="about-page">
+            <p className="text">
                 Olá! Eu sou um desenvolvedor Web que atua em todos os fins de um site.<br />
-                Meu objetivo é tirar sua idéia do papel e fazer websites que passem seus objetivos de uma forma clara e objetiva.
+                Estou cursando engenharia da computação na UPE e tive no desenvolvimento de sites uma paixão
+                inexplicável ao ver linhas de código se transformando em uma interface e servindo dados.<br />
+                Meu objetivo é utilizar meu conhecimento para desenvolver websites que passem seus objetivos de uma
+                forma clara, objetiva e organizada, tirando suas idéias do papel e as trazendo à realidade.<br />
+                Pode vir com a demanda!
             </p>
             <h4>Especialidades</h4>
-            <ul>
+            <ul className="text">
                 <li>Ótimos websites em todos os tamanhos de tela;</li>
-                <li>Código bem escrito e documentado, fácil de manter;</li>
+                <li>Código bem escrito e documentado, fácil de se efetuar futuras manutenções;</li>
                 <li>Frameworks, linguagens e bibliotecas com bom suporte;</li>
-                <li>Acessibilidade.</li>
+                <li>Websites com acessibilidade;</li>
+                <li>Você pode ver as tecnologias que desenvolvo e minha experiência no <a href="https://www.linkedin.com/in/valdery-alves-a32653160" target="_blank">linkedin</a>.</li>
             </ul>
         </div>
     )
