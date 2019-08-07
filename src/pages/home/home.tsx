@@ -8,12 +8,12 @@ export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage
  return (
      <StyledPage>
          <div className="row justify-content-center align-items-center">
-             <div className="col-md-6 col-sm-12 d-flex justify-content-md-end justify-content-sm-center">
+             <div className="col-lg-6 col-md-12 d-flex justify-content-lg-end justify-content-center">
                 <StyledProfileBox>
                     <img src={myImage} alt="Minha imagem" className="perfil-img" />
                 </StyledProfileBox>
              </div>
-            <div className="col-md-6 col-sm-12">
+            <div className="col-lg-6 col-md-12">
                 <h2 className="title">Desenvolvedor Web freelancer</h2>
                 <h3 className="subtitle">front-end / back-end</h3>
                 <p className="text">
