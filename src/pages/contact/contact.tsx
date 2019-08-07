@@ -7,13 +7,12 @@ export const ContactPage = () => {
     return (
         <StyledPage>
             <h2 className="title">Vamos conversar</h2>
-            <p className="subtitle">Tem algum projeto que você gostaria que eu trabalhasse? Ou que tal um bate-papo amigo?</p>
+            <p className="subtitle">Tem algum projeto que você gostaria que eu trabalhasse? Ou que tal uma conversa entre amigos?</p>
             <StyledSocialBox>
                 <p className="title">Me envie uma mensagem</p>
                 <StyledPhoneBox>
                     <StyledSocialLink href="https://t.me/valdery" className="fab fa-telegram mr-1 title telegram-icon link-icon" target="_blank" rel="noopener noreferrer" title="Telegram" style={{ paddingRight: '15px' }}></StyledSocialLink>
                     <StyledSocialLink href="https://wa.me/5581985405144" className="fab fa-whatsapp-square title whatsapp-icon link-icon" target="_blank" rel="noopener noreferrer" title="Whatsapp"></StyledSocialLink>
-                    <br/><p className="subtitle mt-2">+55(81)98540-5144</p>
                 </StyledPhoneBox>
                 <p className="title">ou</p>
                 <a href="mailto:valdery.jur@gmail.com" className="title">
