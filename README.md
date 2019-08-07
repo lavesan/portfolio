@@ -2,6 +2,8 @@
 
 Meu portfolio mostrando meus trabalhos, redes socias e minhas informações.
 
+Acesse ele: [http://www.valderyalves.com](http://www.valderyalves.com)
+
 Se você é um desenvolvedor e quer rodar este projeto localmente, é só seguir os passos:
 
 ## Requisitos mínimos
