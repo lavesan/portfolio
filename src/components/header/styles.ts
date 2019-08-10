@@ -19,6 +19,14 @@ export const StyledHeader = styled.header`
     .header-nav {
         border-bottom: thin solid #cccccc;
         height: 30px;
+        min-width: 750px;
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none;
+        user-select: none;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+        scrollbar-width: none; /* Firefox 64 */
         ul {
             white-space: nowrap;
             overflow-x: auto;
@@ -35,12 +43,12 @@ export const StyledHeader = styled.header`
                 user-select: none;
                 text-decoration: none;
                 color: #35ad2a;
-                &:hover {
+                /* &:hover {
                     color: #316e2c;
                 }
                 > :first-child {
                     display: none;
-                }
+                } */
             }
         }
     }
@@ -56,7 +64,7 @@ export const StyledHeader = styled.header`
     @media(max-width: 1000px) {
         width: 100%
     }
-    @media(max-width: 630px) {
+    /* @media(max-width: 630px) {
         .header-nav ul li a {
             > :first-child {
                 display: block;
@@ -65,5 +73,5 @@ export const StyledHeader = styled.header`
                 display: none;
             }
         }
-    }
+    } */
 `;
