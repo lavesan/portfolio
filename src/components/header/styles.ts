@@ -18,9 +18,27 @@ export const StyledHeader = styled.header`
         list-style: none;
         white-space: nowrap;
     }
+    .arrow-icon {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        color: ${({ theme }) => theme.neutral.primaryColor};
+    }
+
+    #left-arrow {
+        left: 0;
+        background-image: linear-gradient(to right, #FFF, #FFF, #FFF, transparent);
+    }
+    #right-arrow {
+        right: 0;
+        background-image: linear-gradient(to left, #FFF, #FFF, #FFF, transparent);
+    }
     
     .header-nav {
-        position: relative;
         border-bottom: thin solid #cccccc;
         height: 30px;
         min-width: ${navMinWidth}px;

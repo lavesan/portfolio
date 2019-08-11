@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { StyledHeader, navMinWidth } from './styles';
 
 let navBar: any;
+let leftArrow: any;
+let rightArrow: any;
 let canDrag: boolean;
 let lastX: number;
 
@@ -45,15 +47,24 @@ const horizontalSlide = (e: any) => {
 
         // Condições que delimitam o scroll
         // (para não ultrapassar do tamanho do componente)
-        if (movedValue <= 0) finalPositionX = 0;
+        if (movedValue <= 0)
+            finalPositionX = 0;
+
         if (movedValue >= maxDragWidth)
-        finalPositionX = maxDragWidth;
+            finalPositionX = maxDragWidth;
 
         // Escreve no style o transform
         navBar.style.transform = `translate(-${finalPositionX}px)`;
 
         if (scrollContentWidth < navMinWidth) {
-            
+            if (movedValue <= 0) {
+                leftArrow.style.display = 'none';
+            } else
+                leftArrow.style.display = 'block';
+            if (movedValue >= maxDragWidth) {
+                rightArrow.style.display = 'none';
+            } else 
+                rightArrow.style.display = 'block';
         }
     }
 }
@@ -61,6 +72,16 @@ const horizontalSlide = (e: any) => {
 export const HeaderComponent = () => {
     useEffect(() => {
         navBar = document.getElementById('nav-bar');
+        leftArrow = document.getElementById('left-arrow');
+        rightArrow = document.getElementById('right-arrow');
+
+        if (window.innerWidth < navMinWidth) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'block';
+        } else {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        }
     }, []);
 
     return (
@@ -75,6 +96,12 @@ export const HeaderComponent = () => {
                     <span className="far fa-envelope mr-1"></span> valdery.jur@gmail.com
                 </p>
             </div>
+            <span id="left-arrow" className="arrow-icon">
+                <span className="fas fa-arrow-left"></span>
+            </span>
+            <span id="right-arrow" className="arrow-icon">
+                <span className="fas fa-arrow-right"></span>
+            </span>
             <nav 
                 id="nav-bar"
                 className="header-nav"
