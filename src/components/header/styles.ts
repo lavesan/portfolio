@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+/** @description Largura mínima da barra de navegação */
+export const navMinWidth = 750;
+
 export const StyledHeader = styled.header`
     position: fixed;
     left: 0;
@@ -15,10 +18,38 @@ export const StyledHeader = styled.header`
         list-style: none;
         white-space: nowrap;
     }
+    .arrow-icon {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        color: ${({ theme }) => theme.neutral.primaryColor};
+        text-align: center;
+    }
+
+    #left-arrow {
+        left: 0;
+        background-image: linear-gradient(to right, #FFF, #FFF, #FFF, transparent);
+    }
+    #right-arrow {
+        right: 0;
+        background-image: linear-gradient(to left, #FFF, #FFF, #FFF, transparent);
+    }
     
     .header-nav {
         border-bottom: thin solid #cccccc;
         height: 30px;
+        min-width: ${navMinWidth}px;
+        -webkit-user-select: none; /* Chrome all / Safari all */
+        -moz-user-select: none; /* Firefox all */
+        -ms-user-select: none;
+        user-select: none;
+        overflow: -moz-scrollbars-none;
+        -ms-overflow-style: none;
+        scrollbar-width: none; /* Firefox 64 */
         ul {
             white-space: nowrap;
             overflow-x: auto;
@@ -35,12 +66,6 @@ export const StyledHeader = styled.header`
                 user-select: none;
                 text-decoration: none;
                 color: #35ad2a;
-                &:hover {
-                    color: #316e2c;
-                }
-                > :first-child {
-                    display: none;
-                }
             }
         }
     }
@@ -55,15 +80,5 @@ export const StyledHeader = styled.header`
     
     @media(max-width: 1000px) {
         width: 100%
-    }
-    @media(max-width: 630px) {
-        .header-nav ul li a {
-            > :first-child {
-                display: block;
-            }
-            > :last-child {
-                display: none;
-            }
-        }
     }
 `;

@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "author": "Valdery Alves Paes Júnior <valdery.jur@gmail.com>",
+  "author": "Valdery Alves Paes Júnior <valdery.jur@gmail.com> (http://www.valderyalves.com)",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.20",
     "@fortawesome/free-solid-svg-icons": "^5.10.0",

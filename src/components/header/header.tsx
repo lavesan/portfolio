@@ -1,8 +1,99 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { StyledHeader } from './styles';
+import { StyledHeader, navMinWidth } from './styles';
+
+let navBar: any;
+let leftArrow: any;
+let rightArrow: any;
+let canDrag: boolean;
+let lastX: number;
+
+/** @description Activates the horizontal slide event */
+const activateSlide = (e: any) => {
+    canDrag = true;
+
+    // Verifica se o movimento é por touch ou por mouse
+    lastX = e.type == 'touchstart' ? e.changedTouches[0].pageX : e.pageX;
+    const { style: { transform } } = navBar;
+
+    const translate = transform.split('.');
+    const actualPositionX = Number(translate[0].replace(/\D/g, "")) || 0;
+    lastX = actualPositionX + lastX;
+}
+
+/** @description Deactivate the horizontal slide event */
+const deactivateSlide = (e: any) => {
+    canDrag = false;
+}
+
+/** @description Handles the horizontal Slide */
+const horizontalSlide = (e: any) => {
+    if (canDrag) {
+        // Coleta a largura total da tela
+        let scrollContentWidth = window.innerWidth;
+
+        const canMove =
+            Math.floor(navBar.offsetWidth) - scrollContentWidth;
+        const maxDragWidth = canMove >= 0 ? canMove : 0;
+
+        // Verifica se o movimento é por touch ou por mouse
+        const pageX = e.type == 'touchmove' ? e.touches[0].pageX : e.pageX;
+        if(!lastX)
+            lastX = pageX;
+
+        const movedValue = Math.abs(lastX) - pageX;
+        
+        let finalPositionX = Math.abs(movedValue);
+
+        // Condições que delimitam o scroll
+        // (para não ultrapassar do tamanho do componente)
+        if (movedValue <= 0)
+            finalPositionX = 0;
+
+        if (movedValue >= maxDragWidth)
+            finalPositionX = maxDragWidth;
+
+        // Escreve no style o transform
+        navBar.style.transform = `translate(-${finalPositionX}px)`;
+
+        if (scrollContentWidth < navMinWidth) {
+            if (movedValue <= 0) {
+                leftArrow.style.display = 'none';
+            } else
+                leftArrow.style.display = 'block';
+            if (movedValue >= maxDragWidth) {
+                rightArrow.style.display = 'none';
+            } else 
+                rightArrow.style.display = 'block';
+        }
+    }
+}
 
 export const HeaderComponent = () => {
+    window.addEventListener("resize", () => {
+        if (window.innerWidth < navMinWidth) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'block';
+        } else {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        }
+    });
+
+    useEffect(() => {
+        navBar = document.getElementById('nav-bar');
+        leftArrow = document.getElementById('left-arrow');
+        rightArrow = document.getElementById('right-arrow');
+
+        if (window.innerWidth < navMinWidth) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'block';
+        } else {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        }
+    }, []);
+
     return (
         <StyledHeader>
             <h1 className="text-center title">Valdery Alves</h1>
@@ -15,36 +106,46 @@ export const HeaderComponent = () => {
                     <span className="far fa-envelope mr-1"></span> valdery.jur@gmail.com
                 </p>
             </div>
-            <nav className="header-nav">
+            <span id="left-arrow" className="arrow-icon">
+                <span className="fas fa-arrow-left"></span>
+            </span>
+            <span id="right-arrow" className="arrow-icon">
+                <span className="fas fa-arrow-right"></span>
+            </span>
+            <nav 
+                id="nav-bar"
+                className="header-nav"
+                onTouchStart={activateSlide}
+                onTouchMove={horizontalSlide}
+                onMouseDown={activateSlide}
+                onMouseUp={deactivateSlide}
+                onMouseLeave={deactivateSlide}
+                onMouseMove={horizontalSlide}
+            >
                 <ul className="text-center h-100">
                     <li>
                         <NavLink to="/home">
-                            <span className="fas fa-home"></span>
-                            <span>Home</span>
+                            Home
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/projects">
-                            <span className="fas fa-folder"></span>
-                            <span>Projetos</span>
+                            Projetos
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/process">
-                            <span className="fas fa-project-diagram"></span>
-                            <span>Processo</span>
+                            Processo
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/about">
-                            <span className="fas fa-user"></span>
-                            <span>Sobre mim</span>
+                            Sobre mim
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/contact">
-                            <span className="fas fa-phone"></span>
-                            <span>Contato</span>
+                            Contato
                         </NavLink>
                     </li>
                 </ul>   
