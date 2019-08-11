@@ -77,6 +77,7 @@ export const HeaderComponent = () => {
         } else {
             leftArrow.style.display = 'none';
             rightArrow.style.display = 'none';
+            navBar.style.transform = 'translate(0px)'
         }
     });
 
