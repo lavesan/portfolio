@@ -5,11 +5,12 @@ export const ProcessPage = () => {
     return (
         <StyledPage>
             <div>
-                <h4 className="title">Descobrimento</h4>
+                <h4 className="title">Conversa</h4>
                 <p className="text">
-                    Primeiro irei lhe fazer muitas perguntas. Qual o público alvo? Quais os objetivos do projeto?
-                    Vamos construir do zero ou já existe algo pronto? Você já tem wireframes? Qual o prazo?
-                    Isto servirá para eu desenvolver o site da melhor forma e ter um entendimento de como desenvolver futuramente. 
+                    Primeiro irei lhe fazer algumas perguntas. Qual o público alvo? Quais os objetivos do projeto?
+                    Vamos construir do zero ou já existe algo pronto? Qual o prazo?
+                    Com isto poderemos ter uma conversa aberta cheia de idéias para deixarmos esta sua idéia da
+                    melhor forma que conseguirmos!
                 </p>
             </div>
             <div>
@@ -23,7 +24,7 @@ export const ProcessPage = () => {
             <div>
                 <h4 className="title">Desenvolvimento</h4>
                 <p className="text">
-                    Parto para o desenvolvimento e meto a mão na massa!
+                    Parto para a ação e meto a mão na massa!
                 </p>
             </div>
         </StyledPage>
