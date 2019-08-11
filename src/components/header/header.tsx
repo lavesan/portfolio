@@ -70,6 +70,16 @@ const horizontalSlide = (e: any) => {
 }
 
 export const HeaderComponent = () => {
+    window.addEventListener("resize", () => {
+        if (window.innerWidth < navMinWidth) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'block';
+        } else {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        }
+    });
+
     useEffect(() => {
         navBar = document.getElementById('nav-bar');
         leftArrow = document.getElementById('left-arrow');
