@@ -1,61 +1,62 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { StyledHeader } from './styles';
+import { StyledHeader, navMinWidth } from './styles';
 
 let navBar: any;
 let canDrag: boolean;
-let lastX = 0;
+let lastX: number;
 
 /** @description Activates the horizontal slide event */
-const activateSlide = function(e: any) {
+const activateSlide = (e: any) => {
     canDrag = true;
-    lastX = e.pageX;
+
+    // Verifica se o movimento é por touch ou por mouse
+    lastX = e.type == 'touchstart' ? e.changedTouches[0].pageX : e.pageX;
+    const { style: { transform } } = navBar;
+
+    const translate = transform.split('.');
+    const actualPositionX = Number(translate[0].replace(/\D/g, "")) || 0;
+    lastX = actualPositionX + lastX;
 }
 
 /** @description Deactivate the horizontal slide event */
-const deactivateSlide = function() {
+const deactivateSlide = (e: any) => {
     canDrag = false;
 }
 
 /** @description Handles the horizontal Slide */
-const horizontalSlide = function(e: any) {
-    // Coleta a largura total da tela
-    let scrollContentWidth = window.innerWidth;
-    
+const horizontalSlide = (e: any) => {
     if (canDrag) {
-        console.log('Entrou');
-        const { style: { left } } = navBar;
-        // navBar = 'translate(40px)';
-        // get actual width of the box if it's resized and decrement in the max drag width
+        // Coleta a largura total da tela
+        let scrollContentWidth = window.innerWidth;
+
         const canMove =
-            scrollContentWidth - Math.floor(navBar.offsetWidth);
+            Math.floor(navBar.offsetWidth) - scrollContentWidth;
         const maxDragWidth = canMove >= 0 ? canMove : 0;
 
-        // const style = $(context)
-        //     .find(".father-box")
-        //     .attr("style");
-        
-        const findTransform = left.indexOf("translate");
-        const translate = left.substring(findTransform);
-        const actualPositionX = Number(translate.replace(/\D/g, "")) || 0;
-
+        // Verifica se o movimento é por touch ou por mouse
         const pageX = e.type == 'touchmove' ? e.touches[0].pageX : e.pageX;
-        if (!lastX) {
+        if(!lastX)
             lastX = pageX;
-        } 
-        const movedValue = Math.abs(lastX) - pageX;
-        let finalPositionX = Math.abs(actualPositionX + movedValue);
-        lastX = e.pageX;
 
-        if (actualPositionX + movedValue <= 0) finalPositionX = 0;
-        if (actualPositionX + movedValue >= maxDragWidth)
+        const movedValue = Math.abs(lastX) - pageX;
+        
+        let finalPositionX = Math.abs(movedValue);
+
+        // Condições que delimitam o scroll
+        // (para não ultrapassar do tamanho do componente)
+        if (movedValue <= 0) finalPositionX = 0;
+        if (movedValue >= maxDragWidth)
         finalPositionX = maxDragWidth;
 
-        console.log('finalPositionX: ', finalPositionX);
-
+        // Escreve no style o transform
         navBar.style.transform = `translate(-${finalPositionX}px)`;
+
+        if (scrollContentWidth < navMinWidth) {
+            
+        }
     }
-  }
+}
 
 export const HeaderComponent = () => {
     useEffect(() => {
@@ -87,32 +88,27 @@ export const HeaderComponent = () => {
                 <ul className="text-center h-100">
                     <li>
                         <NavLink to="/home">
-                            {/* <span className="fas fa-home"></span> */}
-                            <span>Home</span>
+                            Home
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/projects">
-                            {/* <span className="fas fa-folder"></span> */}
-                            <span>Projetos</span>
+                            Projetos
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/process">
-                            {/* <span className="fas fa-project-diagram"></span> */}
-                            <span>Processo</span>
+                            Processo
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/about">
-                            {/* <span className="fas fa-user"></span> */}
-                            <span>Sobre mim</span>
+                            Sobre mim
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/contact">
-                            {/* <span className="fas fa-phone"></span> */}
-                            <span>Contato</span>
+                            Contato
                         </NavLink>
                     </li>
                 </ul>   
