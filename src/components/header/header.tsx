@@ -29,14 +29,14 @@ const deactivateSlide = (e: any) => {
 /** @description Handles the horizontal Slide */
 const horizontalSlide = (e: any) => {
     if (canDrag) {
-        // Coleta a largura total da tela
+        // Gets the screen's total width
         let scrollContentWidth = window.innerWidth;
 
         const canMove =
             Math.floor(navBar.offsetWidth) - scrollContentWidth;
         const maxDragWidth = canMove >= 0 ? canMove : 0;
 
-        // Verifica se o movimento é por touch ou por mouse
+        // Gets pageX verifying if it's a touch ou a mouse event
         const pageX = e.type == 'touchmove' ? e.touches[0].pageX : e.pageX;
         if(!lastX)
             lastX = pageX;
@@ -45,15 +45,15 @@ const horizontalSlide = (e: any) => {
         
         let finalPositionX = Math.abs(movedValue);
 
-        // Condições que delimitam o scroll
-        // (para não ultrapassar do tamanho do componente)
+        // Delimites the scroll
+        // (so the translate won't overflow hix maximum)
         if (movedValue <= 0)
             finalPositionX = 0;
 
         if (movedValue >= maxDragWidth)
             finalPositionX = maxDragWidth;
 
-        // Escreve no style o transform
+        // Writes the new translate on transform
         navBar.style.transform = `translate(-${finalPositionX}px)`;
 
         if (scrollContentWidth < navMinWidth) {

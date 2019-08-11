@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-/** @description Largura mínima da barra de navegação */
+/** @description Minimum width fo navigation bar */
 export const navMinWidth = 750;
 
 export const StyledHeader = styled.header`
