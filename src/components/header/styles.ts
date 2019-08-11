@@ -27,6 +27,7 @@ export const StyledHeader = styled.header`
         justify-content: center;
         width: 30px;
         color: ${({ theme }) => theme.neutral.primaryColor};
+        text-align: center;
     }
 
     #left-arrow {
