@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { StyledHeader, navMinWidth } from './styles';
+import { StyledHeader, navMinWidth, StyledNavBar, StyledArrowNavBar } from './styles';
 
 let navBar: any;
 let leftArrow: any;
@@ -69,7 +69,7 @@ const horizontalSlide = (e: any) => {
     }
 }
 
-export const HeaderComponent = () => {
+export const HeaderComponent: React.FC = () => {
     window.addEventListener("resize", () => {
         if (window.innerWidth < navMinWidth) {
             leftArrow.style.display = 'none';
@@ -96,26 +96,29 @@ export const HeaderComponent = () => {
     }, []);
 
     return (
-        <StyledHeader>
-            <h1 className="text-center title">Valdery Alves</h1>
-            <div className="gray-font row flex-row justify-content-center align-items-center">
-                <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-end justify-content-center mb-0">
-                    <span className="fab fa-telegram-plane mr-1" title="Telegram"></span>
-                    <span className="fab fa-whatsapp mr-1" title="Whatsapp"></span> +55(81)98540-5144
-                </p>
-                <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-start justify-content-center mb-0">
-                    <span className="far fa-envelope mr-1"></span> valdery.jur@gmail.com
-                </p>
-            </div>
-            <span id="left-arrow" className="arrow-icon">
-                <span className="fas fa-arrow-left"></span>
-            </span>
-            <span id="right-arrow" className="arrow-icon">
-                <span className="fas fa-arrow-right"></span>
-            </span>
-            <nav 
+        <>
+            <StyledHeader>
+                <h1 className="text-center title">Valdery Alves</h1>
+                <div className="gray-font row flex-row justify-content-center align-items-center">
+                    <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-end justify-content-center mb-0">
+                        <span className="fab fa-telegram-plane mr-1" title="Telegram"></span>
+                        <span className="fab fa-whatsapp mr-1" title="Whatsapp"></span> +55(81)98540-5144
+                    </p>
+                    <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-start justify-content-center mb-0">
+                        <span className="far fa-envelope mr-1"></span> valdery.jur@gmail.com
+                    </p>
+                </div>
+            </StyledHeader>
+            <StyledArrowNavBar>
+                <span id="left-arrow" className="arrow-icon">
+                    <span className="fas fa-arrow-left"></span>
+                </span>
+                <span id="right-arrow" className="arrow-icon">
+                    <span className="fas fa-arrow-right"></span>
+                </span>
+            </StyledArrowNavBar>
+            <StyledNavBar
                 id="nav-bar"
-                className="header-nav"
                 onTouchStart={activateSlide}
                 onTouchMove={horizontalSlide}
                 onMouseDown={activateSlide}
@@ -150,7 +153,7 @@ export const HeaderComponent = () => {
                         </NavLink>
                     </li>
                 </ul>   
-            </nav>
-        </StyledHeader>
+            </StyledNavBar>
+        </>
     )
 }
