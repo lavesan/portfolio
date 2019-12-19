@@ -7,7 +7,7 @@ export const ContactPage = () => {
     return (
         <StyledPage>
             <h2 className="title">Vamos conversar</h2>
-            <p className="subtitle">Tem algum projeto que você gostaria que eu trabalhasse? Ou que tal uma conversa entre amigos?</p>
+            <p className="subtitle">Tem algum projeto que você gostaria que eu trabalhasse?</p>
             <StyledSocialBox>
                 <p className="title">Me envie uma mensagem</p>
                 <StyledPhoneBox>

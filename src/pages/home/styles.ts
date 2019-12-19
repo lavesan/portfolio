@@ -1,17 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledProfileBox = styled.div`
-    width: 95%;
+    width: 200px;
+    height: 200px !important;
+    max-width: 200px;
+    max-height: 200px;
     height: 0;
-    padding-bottom: 95%;
     border-radius: 50%;
     overflow: hidden;
-    .perfil-img {
-        width: 100%;
-    }
 
-    @media(max-width: 987px) {
-        width: 70%;
-        padding-bottom: 70%;
+    .perfil-img {
+        width: 230px;
     }
 `;

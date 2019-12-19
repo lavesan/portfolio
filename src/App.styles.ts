@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const StyledApp = styled.div`
   overflow-x: hidden;
-  padding: 225px 0 50px 0;
+  padding: 0 0 50px 0;
   font-size: 1.2rem;
-  height: 3000px;
   font-family: ${({ theme }) => theme.fontFamily};
+
   .green-title {
     color: ${({ theme }) => theme.success.terciaryColor};
   }

@@ -98,8 +98,8 @@ export const HeaderComponent: React.FC = () => {
     return (
         <>
             <StyledHeader>
-                <h1 className="text-center title">Valdery Alves</h1>
-                <div className="gray-font row flex-row justify-content-center align-items-center">
+                <h1 className="text-center">Desenvolvedor de sites</h1>
+                {/* <div className="gray-font row flex-row justify-content-center align-items-center">
                     <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-end justify-content-center mb-0">
                         <span className="fab fa-telegram-plane mr-1" title="Telegram"></span>
                         <span className="fab fa-whatsapp mr-1" title="Whatsapp"></span> +55(81)98540-5144
@@ -107,7 +107,7 @@ export const HeaderComponent: React.FC = () => {
                     <p className="col-md-6 col-12 d-flex align-items-center justify-content-md-start justify-content-center mb-0">
                         <span className="far fa-envelope mr-1"></span> valdery.jur@gmail.com
                     </p>
-                </div>
+                </div> */}
             </StyledHeader>
             <StyledArrowNavBar>
                 <span id="left-arrow" className="arrow-icon">

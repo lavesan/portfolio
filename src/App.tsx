@@ -18,20 +18,22 @@ import { theme } from './App.theme';
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <StyledApp>
+      <>
         <Router>
           <HeaderComponent />
-          <Switch>
-            <Route exact path="/" render={() => <Redirect to='/home' />} />
-            <Route path="/home" render={() => <HomePage myImage={myImage} /> } />
-            <Route path="/projects" component={ProjectsPage} />
-            <Route path="/process" component={ProcessPage} />
-            <Route path="/about" component={AboutPage} />
-            <Route path="/contact" component={ContactPage} />
-          </Switch>
-          <FooterComponent />
+          <StyledApp>
+            <Switch>
+              <Route exact path="/" render={() => <Redirect to='/home' />} />
+              <Route path="/home" render={() => <HomePage myImage={myImage} /> } />
+              <Route path="/projects" component={ProjectsPage} />
+              <Route path="/process" component={ProcessPage} />
+              <Route path="/about" component={AboutPage} />
+              <Route path="/contact" component={ContactPage} />
+            </Switch>
+            <FooterComponent />
+          </StyledApp>
         </Router>
-      </StyledApp>
+      </>
     </ThemeProvider>
   );
 }

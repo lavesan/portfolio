@@ -6,8 +6,10 @@ export const navMinWidth = 750;
 export const StyledNavBar = styled.nav`
     margin-bottom: 20px;
     position: sticky;
+    position: -webkit-sticky;
     top: 0;
     left: 0;
+    z-index: 1;
     width: 100%;
     background-color: #fff;
     border-bottom: thin solid #cccccc;
@@ -43,6 +45,10 @@ export const StyledNavBar = styled.nav`
             color: #35ad2a;
         }
     }
+
+    .active, .active:hover {
+        color: #424242 !important;
+    }
 `;
 
 export const StyledArrowNavBar = styled.div`
@@ -73,45 +79,18 @@ export const StyledArrowNavBar = styled.div`
 `;
 
 export const StyledHeader = styled.header`
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
     width: 60%;
     margin: 0 auto;
     background-color: #FFF;
     z-index: 1;
-    padding-top: 50px;
-    
-    /* .arrow-icon {
-        position: absolute;
-        bottom: 0;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 30px;
+    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
         color: ${({ theme }) => theme.neutral.primaryColor};
-        text-align: center;
-    }
-
-    #left-arrow {
-        left: 0;
-        background-image: linear-gradient(to right, #FFF, #FFF, #FFF, transparent);
-    }
-
-    #right-arrow {
-        right: 0;
-        background-image: linear-gradient(to left, #FFF, #FFF, #FFF, transparent);
-    } */
-    
-    .gray-font {
-        font-size: 0.8em;
-        margin: 20px 0;
-    }
-
-    .active, .active:hover {
-        color: #424242 !important;
+        text-decoration: none;
     }
     
     @media(max-width: 1000px) {

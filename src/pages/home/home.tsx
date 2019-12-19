@@ -8,17 +8,14 @@ export const HomePage: React.FunctionComponent<{ myImage: string }> = ({ myImage
  return (
      <StyledPage>
          <div className="row justify-content-center align-items-center">
-             <div className="col-lg-6 col-md-12 d-flex justify-content-lg-end justify-content-center">
+             <div className="col-md-6 col-12 d-flex justify-content-md-end justify-content-center">
                 <StyledProfileBox>
                     <img src={myImage} alt="Minha imagem" className="perfil-img" />
                 </StyledProfileBox>
              </div>
-            <div className="col-lg-6 col-md-12">
-                <h2 className="title">Desenvolvedor Web freelancer</h2>
-                {/* <h3 className="subtitle">front-end / back-end</h3> */}
+            <div className="col-md-6 col-12">
                 <p className="text">
                     Transformo sua idéia em um site, eventualmente ajudando o seu negócio a evoluir!
-                    {/* Seja uma idéia para empreender ou me contratar como freelancer, pode entrar em contato! */}
                 </p>
             </div>
          </div>

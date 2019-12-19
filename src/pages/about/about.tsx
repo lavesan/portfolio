@@ -6,7 +6,7 @@ export const AboutPage = () => {
         <StyledPage>
             <h2 className="title">Quem sou eu?</h2>
             <p className="text">
-                Olá! Eu sou um desenvolvedor Web que faz um site do começo ao fim.<br />
+                Olá! Eu me chamo Valdery e faço um site do começo ao fim.<br />
                 Atualmente estou cursando engenharia da computação na UPE e tive no desenvolvimento de sites uma paixão
                 inexplicável ao ver linhas de código se transformando em uma interface e servindo dados.<br />
                 Meu objetivo é utilizar meu conhecimento para desenvolver websites que transmitam suas idéias de uma
