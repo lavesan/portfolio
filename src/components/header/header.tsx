@@ -126,7 +126,7 @@ export const HeaderComponent: React.FC = () => {
                 onMouseLeave={deactivateSlide}
                 onMouseMove={horizontalSlide}
             >
-                <ul className="text-center h-100">
+                <ul className="text-center">
                     <li>
                         <NavLink to="/home">
                             Home

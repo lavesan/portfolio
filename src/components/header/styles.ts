@@ -13,7 +13,7 @@ export const StyledNavBar = styled.nav`
     width: 100%;
     background-color: #fff;
     border-bottom: thin solid #cccccc;
-    height: 30px;
+    height: 35px;
     min-width: ${navMinWidth}px;
     -webkit-user-select: none; /* Chrome all / Safari all */
     -moz-user-select: none; /* Firefox all */
@@ -22,6 +22,7 @@ export const StyledNavBar = styled.nav`
     overflow: -moz-scrollbars-none;
     -ms-overflow-style: none;
     scrollbar-width: none; /* Firefox 64 */
+
     ul, li {
         padding: 0;
         list-style: none;
@@ -40,6 +41,7 @@ export const StyledNavBar = styled.nav`
         float: left;
         width: 20%;
         a {
+            font-size: 1.3rem;
             user-select: none;
             text-decoration: none;
             color: #35ad2a;
@@ -58,7 +60,6 @@ export const StyledArrowNavBar = styled.div`
     .arrow-icon {
         position: absolute;
         z-index: 2;
-        /* top: -40px; */
         display: flex;
         align-items: center;
         justify-content: center;
